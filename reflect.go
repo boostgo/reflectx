@@ -3,6 +3,10 @@ package reflectx
 import "reflect"
 
 func IsPointer(x any) bool {
+	if x == nil {
+		return true
+	}
+	
 	return reflect.TypeOf(x).Kind() == reflect.Ptr
 }
 
